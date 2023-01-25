@@ -2,7 +2,8 @@
 
 namespace App\Service;
 
-interface ReferenceService
-{
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService as BaseReferenceService;
 
+interface ReferenceService extends BaseReferenceService
+{
 }

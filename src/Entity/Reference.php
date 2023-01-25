@@ -5,14 +5,14 @@
  * Reference.
  *
  * @category Entity
- * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Entity
+ * @package  App\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Entity/Reference.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\SymfonyThirdpartyAdapter\Entity;
+namespace App\Entity;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Repository\ReferenceRepository;
 use Doctrine\ORM\Mapping as ORM;
@@ -23,7 +23,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
  * Reference.
  *
  * @category Entity
- * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Entity
+ * @package  App\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Entity/Reference.php
@@ -34,6 +34,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
  *
  * @psalm-suppress PropertyNotSetInConstructor
  */
+#[ORM\Entity(repositoryClass: ReferenceRepository::class)]
 class Reference extends BaseReference
 {
     #[ORM\Id]
