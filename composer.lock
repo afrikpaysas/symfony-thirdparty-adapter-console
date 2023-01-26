@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "14fb38346f520337e4ea5614994ebe75",
+    "content-hash": "78375d20f6767acf12fbfb6b64e4c6ac",
     "packages": [
         {
             "name": "afrikpaysas/symfony-thirdparty-adapter",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/afrikpaysas/symfony-thirdparty-adapter.git",
-                "reference": "9827c14b86b2aa61f102034e215328491f976b0f"
+                "reference": "f3c7cd962f3958f02f64c50712ea60ddbc54e7f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/afrikpaysas/symfony-thirdparty-adapter/zipball/9827c14b86b2aa61f102034e215328491f976b0f",
-                "reference": "9827c14b86b2aa61f102034e215328491f976b0f",
+                "url": "https://api.github.com/repos/afrikpaysas/symfony-thirdparty-adapter/zipball/f3c7cd962f3958f02f64c50712ea60ddbc54e7f9",
+                "reference": "f3c7cd962f3958f02f64c50712ea60ddbc54e7f9",
                 "shasum": ""
             },
             "require": {
@@ -89,7 +89,7 @@
                 "issues": "https://github.com/afrikpaysas/symfony-thirdparty-adapter/issues",
                 "source": "https://github.com/afrikpaysas/symfony-thirdparty-adapter/tree/1.0"
             },
-            "time": "2023-01-25T22:30:52+00:00"
+            "time": "2023-01-26T08:12:44+00:00"
         },
         {
             "name": "beberlei/doctrineextensions",
@@ -7322,7 +7322,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.2.5",
+        "php": ">=8.1",
         "ext-ctype": "*",
         "ext-iconv": "*"
     },
