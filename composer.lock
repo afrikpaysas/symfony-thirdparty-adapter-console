@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/afrikpaysas/symfony-thirdparty-adapter.git",
-                "reference": "f3c7cd962f3958f02f64c50712ea60ddbc54e7f9"
+                "reference": "7fd25bbea027fc6b73a085b77f3525ed92b4b69c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/afrikpaysas/symfony-thirdparty-adapter/zipball/f3c7cd962f3958f02f64c50712ea60ddbc54e7f9",
-                "reference": "f3c7cd962f3958f02f64c50712ea60ddbc54e7f9",
+                "url": "https://api.github.com/repos/afrikpaysas/symfony-thirdparty-adapter/zipball/7fd25bbea027fc6b73a085b77f3525ed92b4b69c",
+                "reference": "7fd25bbea027fc6b73a085b77f3525ed92b4b69c",
                 "shasum": ""
             },
             "require": {
@@ -89,7 +89,7 @@
                 "issues": "https://github.com/afrikpaysas/symfony-thirdparty-adapter/issues",
                 "source": "https://github.com/afrikpaysas/symfony-thirdparty-adapter/tree/1.0"
             },
-            "time": "2023-01-26T08:12:44+00:00"
+            "time": "2023-01-27T09:12:01+00:00"
         },
         {
             "name": "beberlei/doctrineextensions",
