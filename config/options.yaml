@@ -1,7 +1,7 @@
-options:
-    option1:
-        name: name1
-        amount : 1000
+#options:
+#  option1:
+#    name: name1
+#    amount : 100
 #  option2:
 #    name: name2
 #    amount: 100
