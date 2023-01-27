@@ -4,3 +4,6 @@
 
 afrikpaysas_thirdparty_adapter:
   resource: '@AfrikpaysasSymfonyThirdpartyAdapterBundle/Resources/config/routes.yaml'
+
+#afrikpaysas_thirdparty_adapter_app:
+#  resource: '@AfrikpaysasSymfonyThirdpartyAdapterBundle/Resources/config/routes_app.yaml'

@@ -2,18 +2,16 @@
 
 namespace App\DataFixtures;
 
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Fixtures\OptionFixtures;
-use App\Service\OptionService;
 use Doctrine\Bundle\FixturesBundle\Fixture;
-use Symfony\Component\HttpKernel\KernelInterface;
+use Doctrine\Persistence\ObjectManager;
 
 class AppFixtures extends Fixture
 {
-    use OptionFixtures;
-
-    public function __construct(OptionService $optionService, KernelInterface $kernel)
+    public function load(ObjectManager $manager): void
     {
-        $this->optionService = $optionService;
-        $this->kernel = $kernel;
+        // $product = new Product();
+        // $manager->persist($product);
+
+        $manager->flush();
     }
 }

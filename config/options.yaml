@@ -1,34 +1,7 @@
 options:
-  nact-surf-day-100:
-    name: 'NACT_Surf Day 100'
-    amount : 100
-  nact-surf-day-250:
-    name: 'NACT_Surf Day 250'
-    amount: 250
-  nact-surf-day-500:
-    name: 'NACT_Surf Day 500'
-    amount: 500
-  nact-surf-week-1000:
-    name: 'NACT_Surf Week 1000'
-    amount: 1000
-  nact-surf-week-3000:
-    name: 'NACT_Surf Week 3000'
-    amount: 3000
-  nact-surf-month-2000:
-    name: 'NACT_Surf Month 2000'
-    amount: 2000
-  nact-surf-month-4000:
-      name: 'NACT_Surf Month 4000'
-      amount: 4000
-  nact-surf-month-8000:
-    name: 'NACT_Surf Month 8000'
-    amount: 8000
-  nact-surf-month-10000:
-    name: 'NACT_Surf Month 10000'
-    amount: 10000
-  nact-streaming-month-40000:
-    name: 'NACT_Streaming Month 40000'
-    amount: 40000
-  nact-surf-night-200:
-    name: 'NACT_SURF NIGHT 200'
-    amount: 200
+    option1:
+        name: name1
+        amount : 1000
+#  option2:
+#    name: name2
+#    amount: 100
