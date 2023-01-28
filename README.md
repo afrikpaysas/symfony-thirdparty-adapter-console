@@ -15,7 +15,7 @@ Applications that use Symfony Flex
 Open a command console, enter your project directory and execute:
 
 ```console
-$ composer create-project afrikpaysas/symfony-thirdparty-adapter-console
+$ composer create-project afrikpaysas/symfony-thirdparty-adapter-console my_project_name
 ```
 
 ### Step 2: Configure the documentation
