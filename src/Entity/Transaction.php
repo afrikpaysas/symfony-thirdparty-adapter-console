@@ -8,10 +8,11 @@
  * @package  App\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Entity/Transaction.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter-console/blob/master/Entity/Transaction.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter-console
  */
+
 namespace App\Entity;
 
 use App\Repository\Impl\TransactionRepositoryImpl;
@@ -25,12 +26,9 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Transaction as BaseTransaction;
  * @package  App\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Entity/Transaction.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter-console/blob/master/Entity/Transaction.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
- *
- * @SuppressWarnings(PHPMD.ShortVariable)
- * @SuppressWarnings(PHPMD.TooManyFields)
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter-console
  *
  * @psalm-suppress PropertyNotSetInConstructor
  */

@@ -1,0 +1,45 @@
+# PHP
+# Test and package your PHP project.
+# Add steps that run tests, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/php
+
+trigger:
+  - devops
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  phpVersion: 8.1
+
+steps:
+  - script: |
+      sudo update-alternatives --set php /usr/bin/php$(phpVersion)
+      sudo update-alternatives --set phar /usr/bin/phar$(phpVersion)
+      sudo update-alternatives --set phpdbg /usr/bin/phpdbg$(phpVersion)
+      sudo update-alternatives --set php-cgi /usr/bin/php-cgi$(phpVersion)
+      sudo update-alternatives --set phar.phar /usr/bin/phar.phar$(phpVersion)
+      php -version
+    displayName: 'Use PHP version $(phpVersion)'
+
+  - script: |
+      cp .env.test .env
+    displayName: 'define environments variables'
+
+  - script: composer install --dev
+    displayName: 'composer install'
+
+  - script: vendor/bin/phpcs src/
+    displayName: 'Run Code Review of src/ with phpcs'
+
+  - script: vendor/bin/phpmd src/ text cleancode,codesize,design,unusedcode,naming,controversial
+    displayName: 'Run Code Review of src/ with phpmd'
+
+  - script: php -d memory_limit=-1 ./vendor/bin/phpstan analyse src
+    displayName: 'Run PHP Stan Analysis of src/ with phpstan'
+
+  - script: vendor/bin/psalm src/
+    displayName: 'Run Psalm Analysis of src/ with psalm'
+
+#  - script: vendor/bin/phpunit
+#    displayName: 'Run tests with phpunit'
