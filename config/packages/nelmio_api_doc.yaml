@@ -1,8 +1,8 @@
 nelmio_api_doc:
     documentation:
         info:
-            title: App Third Party Adapter
-            description: This is documentation for App Third Party Adapter
+            title: App third Party Adapter
+            description: This is the documentation for App third Party Adapter
             version: 1.0.0
     areas: # to filter documented areas
         path_patterns:
