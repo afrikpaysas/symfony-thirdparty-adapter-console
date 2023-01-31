@@ -1,5 +1,4 @@
 version: '3'volumes:volumes:volumes:volumes:volumes:volumes:
-
 services:
 ###> doctrine/doctrine-bundle ###
   database:
