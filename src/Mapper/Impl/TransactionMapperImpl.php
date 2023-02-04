@@ -15,7 +15,7 @@
 
 namespace App\Mapper\Impl;
 
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\TransactionDTO;
+use App\Dto\TransactionDTO;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\TransactionCollection;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\TransactionDTOCollection;
 use App\Entity\Transaction;

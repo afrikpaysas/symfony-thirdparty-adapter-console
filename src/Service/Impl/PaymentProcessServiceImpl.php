@@ -15,7 +15,13 @@
 
 namespace App\Service\Impl;
 
+use App\Service\CallbackNotificationService;
+use App\Service\NotificationService;
+use App\Service\PaymentFailedService;
+use App\Service\PaymentSuccessService;
 use App\Service\HttpService;
+use App\Service\TransactionService;
+use App\Service\PaymentErrorService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Service\PaymentProcessService as BasePaymentProcessService;
 use App\Service\PaymentProcessService as PaymentProcessServiceInterface;
 
@@ -35,12 +41,33 @@ class PaymentProcessServiceImpl extends BasePaymentProcessService implements Pay
     /**
      * Constructor.
      *
-     * @param HttpService $httpService httpService
+     * @param HttpService                 $httpService                 httpService
+     * @param TransactionService          $transactionService          transactionService
+     * @param PaymentSuccessService       $paySucService               paySucService
+     * @param NotificationService         $notificationService         notificationService
+     * @param CallbackNotificationService $callbackNotificationService callbackNotificationService
+     * @param PaymentFailedService        $paymentFailedService        paymentFailedService
+     * @param PaymentErrorService         $paymentErrorService         paymentErrorService
      *
      * @return void
      */
-    public function __construct(HttpService $httpService)
-    {
-        parent::__construct($httpService);
+    public function __construct(
+        HttpService $httpService,
+        TransactionService $transactionService,
+        PaymentSuccessService $paySucService,
+        NotificationService $notificationService,
+        CallbackNotificationService $callbackNotificationService,
+        PaymentFailedService $paymentFailedService,
+        PaymentErrorService $paymentErrorService
+    ) {
+        parent::__construct(
+            $httpService,
+            $transactionService,
+            $paySucService,
+            $notificationService,
+            $callbackNotificationService,
+            $paymentFailedService,
+            $paymentErrorService
+        );
     }
 }

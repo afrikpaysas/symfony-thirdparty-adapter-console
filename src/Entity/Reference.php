@@ -35,4 +35,13 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Reference as BaseReference;
 #[ORM\Entity(repositoryClass: ReferenceRepositoryImpl::class)]
 class Reference extends BaseReference
 {
+    public ?string $customerId;
+    public ?string $billType;
+    public ?string $ref4;
+    public ?string $billId;
+    public ?string $meterNumber;
+    public ?string $billStatus;
+    public ?string $billStatusDesc;
+    public ?string $billTypeDesc;
+    public ?string $agence;
 }

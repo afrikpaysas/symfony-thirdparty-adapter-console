@@ -15,6 +15,10 @@
 
 namespace App\Service\Impl;
 
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\ReferenceNotFoundException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Service\UtilService;
+use App\Model\BaseReferenceApiResponseCollection;
+use App\Dto\ReferenceApiResponse;
 use App\Service\HttpService;
 use App\Service\OptionService;
 use App\Mapper\ReferenceApiResponseMapper;
@@ -38,6 +42,8 @@ use App\Repository\ReferenceRepository;
  */
 class ReferenceServiceImpl extends BaseReferenceService implements ReferenceServiceInterface
 {
+    protected UtilService $utilService;
+
     /**
      * Constructor.
      *
@@ -54,8 +60,11 @@ class ReferenceServiceImpl extends BaseReferenceService implements ReferenceServ
         OptionService $optionService,
         HttpService $httpService,
         VerifyService $verifyService,
-        ReferenceApiResponseMapper $referenceApiMapper
+        ReferenceApiResponseMapper $referenceApiMapper,
+        UtilService $utilService
     ) {
+        $this->utilService = $utilService;
+
         parent::__construct(
             $referenceRepository,
             $optionService,

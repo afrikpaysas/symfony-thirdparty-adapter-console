@@ -16,7 +16,7 @@
 namespace App\Mapper\Impl;
 
 use App\Entity\Reference;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ReferenceDTO;
+use App\Dto\ReferenceDTO;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ReferenceCollection;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ReferenceDTOCollection;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Mapper\ReferenceMapper as BaseReferenceMapper;

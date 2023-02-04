@@ -35,4 +35,9 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Transaction as BaseTransaction;
 #[ORM\Entity(repositoryClass: TransactionRepositoryImpl::class)]
 class Transaction extends BaseTransaction
 {
+    #[ORM\Column(name: 'message', length: 255, nullable: true)]
+    public ?string $message = null;
+
+    #[ORM\Column(name: 'transactionStatus', length: 255, nullable: true)]
+    public ?string $transactionStatus = null;
 }

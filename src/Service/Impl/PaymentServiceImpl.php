@@ -15,14 +15,16 @@
 
 namespace App\Service\Impl;
 
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ProviderPaymentResponse as BaseProviderPaymentResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentAPIException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Model\AppConstants;
+use App\Dto\ProviderPaymentResponse;
+use App\Model\ProviderPaymentResponse as ModelProviderPaymentResponse;
+use App\Service\PaymentProcessService;
 use App\Service\ReferenceService;
 use App\Service\TransactionService;
-use App\Service\NotificationService;
 use App\Service\OptionService;
 use App\Service\PaymentErrorService;
-use App\Service\PaymentFailedService;
-use App\Service\PaymentProcessService;
-use App\Service\PaymentSuccessService;
 use App\Service\PaymentVerifyService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Service\PaymentService as BasePaymentService;
 use App\Service\PaymentService as PaymentServiceInterface;
@@ -48,11 +50,8 @@ class PaymentServiceImpl extends BasePaymentService implements PaymentServiceInt
      *
      * @param TransactionService    $transactionService   transactionService
      * @param OptionService         $optionService        optionService
-     * @param NotificationService   $notificationService  notificationService
      * @param ReferenceService      $referenceService     referenceService
-     * @param PaymentSuccessService $paySucService        paySucService
      * @param PaymentErrorService   $paymentErrorService  paymentErrorService
-     * @param PaymentFailedService  $paymentFailedService paymentFailedService
      * @param PaymentVerifyService  $paymentVerifyService paymentVerifyService
      * @param PaymentProcessService $payProcService       payProcService
      *
@@ -61,22 +60,16 @@ class PaymentServiceImpl extends BasePaymentService implements PaymentServiceInt
     public function __construct(
         TransactionService $transactionService,
         OptionService $optionService,
-        NotificationService $notificationService,
         ReferenceService $referenceService,
-        PaymentSuccessService $paySucService,
         PaymentErrorService $paymentErrorService,
-        PaymentFailedService $paymentFailedService,
         PaymentVerifyService $paymentVerifyService,
         PaymentProcessService $payProcService
     ) {
         parent::__construct(
             $transactionService,
             $optionService,
-            $notificationService,
             $referenceService,
-            $paySucService,
             $paymentErrorService,
-            $paymentFailedService,
             $paymentVerifyService,
             $payProcService
         );
