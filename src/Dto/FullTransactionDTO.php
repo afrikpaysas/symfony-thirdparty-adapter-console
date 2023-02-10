@@ -1,13 +1,13 @@
 <?php
 
 /**
- * ProviderPaymentResponse.
+ * FullTransactionDTO.
  *
  * @category Dto
  * @package  App\Dto
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter-console/blob/master/Lib/Dto/ProviderPaymentResponse.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter-console/blob/master/Lib/Dto/FullTransactionDTO.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter-console
  *
@@ -16,21 +16,22 @@
 
 namespace App\Dto;
 
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ProviderPaymentResponse as BaseProviderPaymentResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\FullTransactionDTO as BaseFullTransactionDTO;
 
 /**
- * ProviderPaymentResponse.
+ * FullTransactionDTO.
  *
  * @category Dto
  * @package  App\Dto
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter-console/blob/master/Lib/Dto/ProviderPaymentResponse.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter-console/blob/master/Lib/Dto/FullTransactionDTO.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter-console
  *
  * @psalm-suppress PropertyNotSetInConstructor
  */
-class ProviderPaymentResponse extends BaseProviderPaymentResponse
+
+class FullTransactionDTO extends BaseFullTransactionDTO
 {
 }

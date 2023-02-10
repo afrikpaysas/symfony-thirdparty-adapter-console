@@ -1,0 +1,1 @@
+symfony console messenger:consume set_balance upload_provider_data upload_provider_id update_reference_status send_admin_email send_admin_sms send_client_sms send_client_email callback_message update_status_message log_message -vv

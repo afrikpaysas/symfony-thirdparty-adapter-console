@@ -15,6 +15,9 @@
 
 namespace App\Service\Impl;
 
+use App\Mapper\FullTransactionMapper;
+use App\Mapper\TransactionMapper;
+use App\Service\ReferenceService;
 use App\Service\CallbackNotificationService;
 use App\Service\NotificationService;
 use App\Service\PaymentFailedService;
@@ -24,6 +27,7 @@ use App\Service\TransactionService;
 use App\Service\PaymentErrorService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Service\PaymentProcessService as BasePaymentProcessService;
 use App\Service\PaymentProcessService as PaymentProcessServiceInterface;
+use Symfony\Component\Messenger\MessageBusInterface;
 
 /**
  * PaymentProcessServiceImpl.
@@ -48,6 +52,10 @@ class PaymentProcessServiceImpl extends BasePaymentProcessService implements Pay
      * @param CallbackNotificationService $callbackNotificationService callbackNotificationService
      * @param PaymentFailedService        $paymentFailedService        paymentFailedService
      * @param PaymentErrorService         $paymentErrorService         paymentErrorService
+     * @param MessageBusInterface         $bus                         bus
+     * @param ReferenceService            $referenceService            referenceService
+     * @param TransactionMapper           $transactionMapper           transactionMapper
+     * @param FullTransactionMapper       $fullTransactionMapper       fullTransactionMapper
      *
      * @return void
      */
@@ -58,7 +66,11 @@ class PaymentProcessServiceImpl extends BasePaymentProcessService implements Pay
         NotificationService $notificationService,
         CallbackNotificationService $callbackNotificationService,
         PaymentFailedService $paymentFailedService,
-        PaymentErrorService $paymentErrorService
+        PaymentErrorService $paymentErrorService,
+        MessageBusInterface $bus,
+        ReferenceService $referenceService,
+        TransactionMapper $transactionMapper,
+        FullTransactionMapper $fullTransactionMapper
     ) {
         parent::__construct(
             $httpService,
@@ -67,7 +79,11 @@ class PaymentProcessServiceImpl extends BasePaymentProcessService implements Pay
             $notificationService,
             $callbackNotificationService,
             $paymentFailedService,
-            $paymentErrorService
+            $paymentErrorService,
+            $bus,
+            $referenceService,
+            $transactionMapper,
+            $fullTransactionMapper
         );
     }
 }

@@ -15,6 +15,7 @@
 
 namespace App\Service\Impl;
 
+use App\Service\ReferenceService;
 use App\Service\TransactionService;
 use App\Service\VerifyService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Service\PaymentVerifyService as BasePaymentVerifyService;
@@ -39,13 +40,15 @@ class PaymentVerifyServiceImpl extends BasePaymentVerifyService implements Payme
      *
      * @param TransactionService $transactionService transactionService
      * @param VerifyService      $verifyService      verifyService
+     * @param ReferenceService   $referenceService   referenceService
      *
      * @return void
      */
     public function __construct(
         TransactionService $transactionService,
-        VerifyService $verifyService
+        VerifyService $verifyService,
+        ReferenceService $referenceService
     ) {
-        parent::__construct($transactionService, $verifyService);
+        parent::__construct($transactionService, $verifyService, $referenceService);
     }
 }

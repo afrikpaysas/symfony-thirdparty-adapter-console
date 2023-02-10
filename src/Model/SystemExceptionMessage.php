@@ -30,4 +30,8 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
  */
 final class SystemExceptionMessage
 {
+    public const INVALID_PAYMENT_RESPONSE = [
+        AppConstants::CODE => '001',
+        AppConstants::MESSAGE => 'Invalid payment response'
+    ];
 }

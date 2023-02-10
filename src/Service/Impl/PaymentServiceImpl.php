@@ -74,4 +74,16 @@ class PaymentServiceImpl extends BasePaymentService implements PaymentServiceInt
             $payProcService
         );
     }
+
+    /*
+    public function generateProviderResponse(?array $apiResponse): ProviderPaymentResponse
+    {
+        return parent::decision($apiResponse);
+    }
+
+    public function decision(BaseProviderPaymentResponse $providerResponse): void
+    {
+        parent::decision($providerResponse);
+    }
+    */
 }

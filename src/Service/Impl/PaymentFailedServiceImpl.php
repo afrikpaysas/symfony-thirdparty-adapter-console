@@ -15,9 +15,11 @@
 
 namespace App\Service\Impl;
 
+use App\Mapper\FullTransactionMapper;
 use App\Service\TransactionService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Service\PaymentFailedService as BasePaymentFailedService;
 use App\Service\PaymentFailedService as PaymentFailedServiceInterface;
+use Symfony\Component\Messenger\MessageBusInterface;
 
 /**
  * PaymentFailedServiceImpl.
@@ -35,12 +37,17 @@ class PaymentFailedServiceImpl extends BasePaymentFailedService implements Payme
     /**
      * Constructor.
      *
-     * @param TransactionService $transactionService transactionService
+     * @param TransactionService  $transactionService      transactionService
+     * @param MessageBusInterface $bus                     bus
+     * @param FullTransactionMapper $fullTransactionMapper fullTransactionMapper
      *
      * @return void
      */
-    public function __construct(TransactionService $transactionService)
-    {
-        parent::__construct($transactionService);
+    public function __construct(
+        TransactionService $transactionService,
+        MessageBusInterface $bus,
+        FullTransactionMapper $fullTransactionMapper
+    ) {
+        parent::__construct($transactionService, $bus, $fullTransactionMapper);
     }
 }

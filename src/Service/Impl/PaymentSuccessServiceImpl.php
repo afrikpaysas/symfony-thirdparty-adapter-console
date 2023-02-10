@@ -15,10 +15,12 @@
 
 namespace App\Service\Impl;
 
+use App\Mapper\FullTransactionMapper;
 use App\Service\ReferenceService;
 use App\Service\TransactionService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Service\PaymentSuccessService as BasePaymentSuccessService;
 use App\Service\PaymentSuccessService as PaymentSuccessServiceInterface;
+use Symfony\Component\Messenger\MessageBusInterface;
 
 /**
  * PaymentSuccessServiceImpl.
@@ -36,15 +38,19 @@ class PaymentSuccessServiceImpl extends BasePaymentSuccessService implements Pay
     /**
      * Constructor.
      *
-     * @param TransactionService $transactionService transactionService
-     * @param ReferenceService   $referenceService   referenceService
+     * @param TransactionService    $transactionService    transactionService
+     * @param ReferenceService      $referenceService      referenceService
+     * @param MessageBusInterface   $bus                   bus
+     * @param FullTransactionMapper $fullTransactionMapper fullTransactionMapper
      *
      * @return void
      */
     public function __construct(
         TransactionService $transactionService,
-        ReferenceService $referenceService
+        ReferenceService $referenceService,
+        MessageBusInterface $bus,
+        FullTransactionMapper $fullTransactionMapper
     ) {
-        parent::__construct($transactionService, $referenceService);
+        parent::__construct($transactionService, $referenceService, $bus, $fullTransactionMapper);
     }
 }

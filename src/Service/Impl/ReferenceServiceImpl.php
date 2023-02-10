@@ -73,4 +73,11 @@ class ReferenceServiceImpl extends BaseReferenceService implements ReferenceServ
             $referenceApiMapper
         );
     }
+
+    /*
+    public function generateReferenceResponse(string $referenceNumber, ?array $data): ReferenceApiResponse
+    {
+        return parent::generateReferenceResponse($referenceNumber, $data);
+    }
+    */
 }

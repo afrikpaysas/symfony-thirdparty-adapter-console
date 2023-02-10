@@ -67,4 +67,16 @@ class CallbackServiceImpl extends BaseCallbackService implements CallbackService
             $paymentErrorService
         );
     }
+
+    /*
+    public function generateProviderResponse(?array $apiResponse): ProviderResponse
+    {
+        return parent::generateProviderResponse($apiResponse);
+    }
+
+    public function decision(ProviderPaymentResponse $providerResponse): void
+    {
+        parent::decision($providerResponse);
+    }
+    */
 }

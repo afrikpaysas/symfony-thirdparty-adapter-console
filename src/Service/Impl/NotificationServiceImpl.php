@@ -15,11 +15,15 @@
 
 namespace App\Service\Impl;
 
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction;
+use App\Mapper\TransactionMapper;
 use App\Service\MessagingService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Service\NotificationService as BaseNotificationService;
 use App\Service\NotificationService as NotificationServiceInterface;
 use App\Service\ReferenceService;
 use App\Service\VerifyService;
+use Symfony\Component\Messenger\MessageBusInterface;
+use \DateTimeZone;
 
 /**
  * NotificationServiceImpl.
@@ -37,17 +41,32 @@ class NotificationServiceImpl extends BaseNotificationService implements Notific
     /**
      * Constructor.
      *
-     * @param MessagingService $messagingService messagingService
-     * @param ReferenceService $referenceService referenceService
-     * @param VerifyService    $verifyService    verifyService
+     * @param MessagingService     $messagingService  messagingService
+     * @param ReferenceService     $referenceService  referenceService
+     * @param VerifyService        $verifyService     verifyService
+     * @param  MessageBusInterface $bus               bus
+     * @param  TransactionMapper   $transactionMapper transactionMapper
      *
      * @return void
      */
     public function __construct(
         MessagingService $messagingService,
         ReferenceService $referenceService,
-        VerifyService $verifyService
+        VerifyService $verifyService,
+        MessageBusInterface $bus,
+        TransactionMapper $transactionMapper
     ) {
-        parent::__construct($messagingService, $referenceService, $verifyService);
+        parent::__construct($messagingService, $referenceService, $verifyService, $bus, $transactionMapper);
     }
+
+    /*
+    public function generateAdminSMS(Transaction $transaction): ?array
+    {
+        return parent::generateAdminSMS($transaction);
+    }
+
+    public function generateClientSMS(Transaction $transaction): ?array
+    {
+        return parent::generateAdminSMS($transaction);
+    }*/
 }

@@ -1,29 +1,37 @@
 <?php
 
+/**
+ * ProviderResponse.
+ *
+ * @category Dto
+ * @package  App\Dto
+ * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter-console/blob/master/Lib/Dto/ProviderResponse.php
+ *
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter-console
+ *
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
+
 namespace App\Dto;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ProviderResponse as BaseProviderResponse;
-use App\Model\ProviderPaymentResponse as ModelProviderPaymentResponse;
 
+
+/**
+ * ProviderResponse.
+ *
+ * @category Dto
+ * @package  App\Dto
+ * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter-console/blob/master/Lib/Dto/ProviderResponse.php
+ *
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter-console
+ *
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 class ProviderResponse extends BaseProviderResponse
 {
-    public ?string $message = null;
-    public ?string $transactionStatus = null;
-
-    public static function generateProviderResponse (
-        ModelProviderPaymentResponse $data
-    ): ProviderResponse {
-        $response = new ProviderResponse();
-
-        $response->providerStatus = "{$data->code}";
-        $response->providerMessage = $data->message;
-
-        if ($data->data) {
-            $response->providerId = $data->data->transactionId;
-            $response->transactionStatus = $data->data->status;
-            $response->message = $data->data->message;
-        }
-
-        return $response;
-    }
 }

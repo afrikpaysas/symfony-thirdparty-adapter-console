@@ -14,7 +14,7 @@
  */
 namespace App\Model;
 
-use App\Dto\ReferenceApiResponse;
+use App\Dto\ProviderPaymentResponse;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Collection;
 
 /**

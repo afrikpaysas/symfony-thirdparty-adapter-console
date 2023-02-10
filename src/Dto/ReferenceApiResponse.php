@@ -1,37 +1,36 @@
 <?php
 
+/**
+ * ReferenceApiResponse.
+ *
+ * @category Dto
+ * @package  App\Dto
+ * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter-console/blob/master/Lib/Dto/ReferenceApiResponse.php
+ *
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter-console
+ *
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
+
 namespace App\Dto;
 
-use \Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ReferenceApiResponse as BaseReferenceApiResponse;
-use \App\Model\ReferenceApiResponse as ModelReferenceApiResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ReferenceApiResponse as BaseReferenceApiResponse;
 
+/**
+ * ReferenceApiResponse.
+ *
+ * @category Dto
+ * @package  App\Dto
+ * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter-console/blob/master/Lib/Dto/ReferenceApiResponse.php
+ *
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter-console
+ *
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 class ReferenceApiResponse extends BaseReferenceApiResponse
 {
-    public ?string $customerId;
-    public ?string $billType;
-    public ?string $ref4;
-    public ?string $billId;
-    public ?string $meterNumber;
-    public ?string $billStatus;
-    public ?string $billStatusDesc;
-    public ?string $billTypeDesc;
-    public ?string $agence;
-
-    public static function generate(ModelReferenceApiResponse $response) : ReferenceApiResponse {
-        $referenceApiResponse = new ReferenceApiResponse();
-
-        foreach (get_object_vars($response) as $key => $value) {
-            if (property_exists($referenceApiResponse, $key) && null != $value) {
-                $referenceApiResponse->$key = $response->$key;
-            }
-        }
-
-        $referenceApiResponse->name = "{$response->customerName}";
-        $referenceApiResponse->amount = "{$response->billAmount}";
-        $referenceApiResponse->expirationDate = "{$response->billDueDate}";
-        $referenceApiResponse->generationDate = "{$response->billGenerationDate}";
-        $referenceApiResponse->referenceNumber = "{$response->billNumber}";
-
-        return $referenceApiResponse;
-    }
 }

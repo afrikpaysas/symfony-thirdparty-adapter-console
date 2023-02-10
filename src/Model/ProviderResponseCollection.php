@@ -2,23 +2,24 @@
 
 /**
  * PHP Version 8.1
- * ReferenceApiResponseCollection.
+ * ProviderResponseCollection.
  *
  * @category Model
  * @package  App\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/ReferenceApiResponseCollection.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/ProviderResponseCollection.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
+
 namespace App\Model;
 
-use App\Dto\ReferenceApiResponse;
+use App\Dto\ProviderResponse;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Collection;
 
 /**
- * ReferenceApiResponseCollection.
+ * ProviderResponseCollection.
  *
  * @template-extends Collection<ReferenceApiResponse>
  *
@@ -26,11 +27,11 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Collection;
  * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/ReferenceApiResponseCollection.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/ProviderResponseCollection.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-class ReferenceApiResponseCollection extends Collection
+class ProviderResponseCollection extends Collection
 {
     /**
      * Constructor.
@@ -44,7 +45,7 @@ class ReferenceApiResponseCollection extends Collection
      */
     public function __construct(
         object|array $array = [],
-        string $class = ReferenceApiResponse::class,
+        string $class = ProviderResponse::class,
         int $flags = 0,
         string $iteratorClass = 'ArrayIterator'
     ) {

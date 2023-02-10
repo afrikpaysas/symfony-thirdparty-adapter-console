@@ -17,7 +17,6 @@ namespace App\Controller;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Controller\CallbackController as BaseCallbackController;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\CallbackController as CallbackControllerInterface;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\CancelService;
 use App\Mapper\ReferenceMapper;
 use App\Mapper\TransactionMapper;
 use App\Service\CallbackService;
@@ -40,6 +39,16 @@ use FOS\RestBundle\Controller\Annotations\Route;
 #[Route('/api/callback')]
 class CallbackController extends BaseCallbackController implements CallbackControllerInterface
 {
+    /**
+     * Constructor.
+     *
+     * @param CallbackService   $callbackService   callbackService
+     * @param TransactionMapper $transactionMapper transactionMapper
+     * @param ReferenceMapper   $referenceMapper   referenceMapper
+     * @param ReferenceService  $referenceService  referenceService
+     *
+     * return void
+     */
     public function __construct(
         CallbackService $callbackService,
         TransactionMapper $transactionMapper,
